@@ -62,6 +62,6 @@ class Tablero:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.blt(90, 98, 0, 0, 128, 12, 9, None, 0, scale=17.45)
+        pyxel.blt(90, 98, 0, 0, 128, 12, 9, None, 0, scale=20)
         pyxel.blt(self.chef1.x, self.chef1.y, *self.chef1.imagen)
         pyxel.blt(self.chef2.x, self.chef2.y, *self.chef2.imagen)
