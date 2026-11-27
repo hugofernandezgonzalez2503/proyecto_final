@@ -76,7 +76,7 @@ class Chef:
             self.__tiene_plato = plato
 
 
-    def mover(self, direccion: str, tamaño_x_tablero: int):
+    def mover(self, direccion: str, tamaño_x_tablero: int, tamaño_y_tablero: int):
         """
         Este es un ejemplo de cómo mover al chef horizontalmente. No se tienen en cuenta
         los obstáculos del tablero.
@@ -84,7 +84,7 @@ class Chef:
         :param board_x_size: el tamaño horizontal del tablero, para comprobar los
          límites
         """
-        DIRECTIONS = ("izquierda", "derecha")
+        DIRECTIONS = ("izquierda", "derecha", "arriba", "abajo")
         # Comprobación del tipo y el valor de los parámetros
         if not isinstance(direccion, str):
             raise TypeError("La dirección debe ser una cadena de caracteres")
@@ -92,8 +92,12 @@ class Chef:
             raise TypeError("tamaño_x_tablero debe ser un número entero")
         elif tamaño_x_tablero < 1:
             raise ValueError("El tamaño_x_tablero debe ser un entero positivo")
+        elif not isinstance(tamaño_y_tablero, int):
+            raise TypeError("tamaño_y_tablero debe ser un número entero")
+        elif tamaño_y_tablero < 1:
+            raise ValueError("El tamaño_y_tablero debe ser un entero positivo")
         elif direccion.lower() not in DIRECTIONS:
-            raise ValueError("La dirección debe ser 'izquierda' o 'derecha'")
+            raise ValueError("La dirección debe ser 'izquierda', 'derecha', 'arriba', 'abajo'")
         # Convertimos la dirección a minúsculas para evitar problemas con las
         # mayúsculas
         direccion = direccion.lower()
@@ -111,5 +115,5 @@ class Chef:
         elif direccion == "arriba" and self.y > 0:
           self.y -= 1
 
-        elif direccion == "abajo" and self.y + self.imagen[4] < 176:
+        elif direccion == "abajo" and self.y + self.imagen[4] < tamaño_y_tablero:
           self.y += 1
