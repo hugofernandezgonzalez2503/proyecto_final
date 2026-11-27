@@ -107,3 +107,9 @@ class Chef:
     
         elif direccion == "izquierda" and self.x > 0:
           self.x -= 1
+
+        elif direccion == "arriba" and self.y > 0:
+          self.y -= 1
+
+        elif direccion == "abajo" and self.y + self.imagen[4] < 176:
+          self.y += 1
