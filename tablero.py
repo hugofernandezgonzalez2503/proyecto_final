@@ -43,4 +43,5 @@ class Tablero:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.bltm(0, 32, 0, 16, 11, 9)
+        pyxel.blt(90, 98, 0, 0, 128, 12, 9, None, 0, scale=17.45)
+        
