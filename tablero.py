@@ -41,6 +41,25 @@ class Tablero:
         if pyxel.btn(pyxel.KEY_Q):
             pyxel.quit()
 
+         # Para mover el chef
+        if pyxel.btn(pyxel.KEY_A):
+            self.chef1.mover("izquierda", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_D):
+            self.chef1.mover("derecha", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_W):
+            self.chef1.mover("arriba", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_S):
+            self.chef1.mover("abajo", self.ancho, self.alto)
+
+        if pyxel.btn(pyxel.KEY_LEFT):
+            self.chef2.mover("izquierda", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_RIGHT):
+            self.chef2.mover("derecha", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_UP):
+            self.chef2.mover("arriba", self.ancho, self.alto)
+        if pyxel.btn(pyxel.KEY_DOWN):
+            self.chef2.mover("abajo", self.ancho, self.alto)
+
     def draw(self):
         pyxel.cls(0)
         pyxel.blt(90, 98, 0, 0, 128, 12, 9, None, 0, scale=17.45)
