@@ -1,6 +1,8 @@
+# Importamos la biblioteca pyxel
 import pyxel
-
+# Importamos la clase Chef para poder utilizarla en la clase Tablero
 from chef import Chef
+
 
 class Tablero:
     def __init__(self, ancho:int, alto:int):
