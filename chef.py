@@ -13,7 +13,7 @@ class Chef:
         self.imagen_x=imagen_x
         self.imagen_y=imagen_y
         self.plato=plato
-        self.imagen = (0, 0, 0, 16, 16)
+        self.imagen = (0, imagen_x, imagen_y, 16, 16)
         valor = random.randint(0, 1)
         if valor == 1:
             self.tiene_plato = True

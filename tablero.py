@@ -9,7 +9,7 @@ class Tablero:
         self.ancho=ancho
         self.alto=alto
         self.chef1=Chef(self.ancho//2, 64, 0, 0, False)
-        self.chef2=Chef(self.ancho//2, 128, 0, 0, False)
+        self.chef2=Chef(self.ancho//2, 128, 0, 112, False)
 
         pyxel.init(self.ancho, self.alto, title="Juego cocina", display_scale=4)
         pyxel.load("assets/resources.pyxres")
